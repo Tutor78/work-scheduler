@@ -2,6 +2,10 @@
     font-family: helvetica;
 }
 
+body {
+    background-color: white;
+}
+
 h2 {
     font-size: 23px;
 }
@@ -17,7 +21,7 @@ div.title {
     background-color: rgb(77, 129, 179);
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
 }
 
 #menu {
@@ -27,7 +31,7 @@ div.title {
 button.btn {
     color: white;
     background-color: rgb(77, 129, 179);
-    border: 1px solid black;
+    border: 1px solid #2f3a37;
 }
 
 .lowered {
@@ -45,16 +49,17 @@ button.btn {
 
 .grid-label {
     height: 10px;
-    background-color: rgba(77, 130, 179, 0.500);
-    border: 1px solid rgba(0, 0, 0, 0.500);
+    color: #34312a;
+    background-color: rgba(77, 130, 179, 0.5);
+    border: 1px solid black;
     padding: 25px;
     text-align: center;
 }
 
 .grid-item {
     height: 250px;
-    background-color: rgba(77, 130, 179, 0.250);
-    border: 1px solid rgba(0, 0, 0, 0.500);
+    background-color: rgba(77, 130, 179, 0.2);
+    border: 1px solid black;
     padding: 20px;
     text-align: center;
 }
