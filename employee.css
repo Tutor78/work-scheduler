@@ -34,6 +34,10 @@ button.btn {
     margin-top: 37px;
 }
 
+.container-wrapper {
+    margin: 30px;
+}
+
 .grid-container {
     display: grid;
     border: 1px solid black;
