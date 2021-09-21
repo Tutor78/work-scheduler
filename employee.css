@@ -1,0 +1,56 @@
+* {
+    font-family: helvetica;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+#minimal-btn {
+    float: right;
+    border: none;
+}
+
+div.title {
+    text-align: center;
+    color: white;
+    background-color: rgb(77, 129, 179);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+
+button.btn {
+    color: white;
+    background-color: rgb(77, 129, 179);
+    border: 1px solid black;
+}
+
+.lowered {
+    margin-top: 37px;
+}
+
+.grid-container {
+    display: grid;
+    border: 1px solid black;
+}
+
+.grid-label {
+    height: 10px;
+    background-color: rgba(77, 130, 179, 0.500);
+    border: 1px solid rgba(0, 0, 0, 0.500);
+    padding: 25px;
+    text-align: center;
+}
+
+.grid-item {
+    height: 250px;
+    background-color: rgba(77, 130, 179, 0.250);
+    border: 1px solid rgba(0, 0, 0, 0.500);
+    padding: 20px;
+    text-align: center;
+}
