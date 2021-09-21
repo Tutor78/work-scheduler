@@ -46,6 +46,13 @@ Employee.init(
                 model: 'job',
                 key: 'id'
             }
+        },
+        shift_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'shift',
+                key: 'id'
+            }
         }
     },
     {

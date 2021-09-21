@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Employee, Job } = require('../../models');
+const { Employee, Job, Shift, Day } = require('../../models');
 
 // GET /api/employees/
 router.get('/', (req, res) => {
@@ -12,13 +12,21 @@ router.get('/', (req, res) => {
             'last_name',
             'job_id'
         ],
-        include: {
-            model: Job,
-            attributes: [
-                'title',
-                'department'
-            ]
-        }
+        include: [
+            {
+                model: Job,
+                attributes: [
+                    'title',
+                    'department'
+                ]
+            },
+            {
+                model: Shift
+            },
+            {
+                model: Day
+            }
+        ]
     })
     .then(dbEmployeeData => res.json(dbEmployeeData))
     .catch(err => {
