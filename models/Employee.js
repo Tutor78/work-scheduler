@@ -13,11 +13,6 @@ Employee.init(
             allowNull: false,
             primaryKey: true
         },
-        // sets the username column info
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         // sets the email column info
         email: {
             type: DataTypes.STRING,
@@ -33,6 +28,23 @@ Employee.init(
             allowNull: false,
             validate: {
                 len: [4]
+            }
+        },
+        // sets the first name column information
+        first_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        // sets the last name column
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        job_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'job',
+                key: 'id'
             }
         }
     },
