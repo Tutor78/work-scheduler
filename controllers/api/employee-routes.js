@@ -21,10 +21,24 @@ router.get('/', (req, res) => {
                 ]
             },
             {
-                model: Shift
+                model: Shift,
+                attributes: [
+                    'title',
+                    'department'
+                ]
             },
             {
-                model: Day
+                model: Day,
+                attributes: [
+                    'monday',
+                    'tuesday',
+                    'wednesday',
+                    'thursday',
+                    'friday',
+                    'saturday',
+                    'sunday'
+                ]
+
             }
         ]
     })
@@ -38,6 +52,59 @@ router.get('/', (req, res) => {
 // GET /api/employees/:id
 router.get('/:id', (req, res) => {
     // logic to get informtion about one employee
+    Employee.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'email',
+            'first_name',
+            'last_name',
+            'job_id'
+        ],
+        include: [
+            {
+                model: Job,
+                attributes: [
+                    'title',
+                    'department'
+                ]
+            },
+            {
+                model: Shift,
+                attributes: [
+                    'shift_name',
+                    'start_time',
+                    'end_time'  
+                ]
+            },
+            {
+                model: Day,
+                attributes: [
+                    'monday',
+                    'tuesday',
+                    'wednesday',
+                    'thursday',
+                    'friday',
+                    'saturday',
+                    'sunday'
+                ]
+            }
+        ]
+    })
+    .then(dbEmployeeData => {
+        if (!dbEmployeeData) {
+            res.status(404).json({ message: 'There is no employee with that id '});
+            return;
+        }
+
+        res.json(dbEmployeeData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
 
 // POST /api/employees
