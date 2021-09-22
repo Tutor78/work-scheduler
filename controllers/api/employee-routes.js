@@ -23,8 +23,9 @@ router.get('/', (req, res) => {
             {
                 model: Shift,
                 attributes: [
-                    'title',
-                    'department'
+                    'shift_name',
+                    'start_time',
+                    'end_time'
                 ]
             },
             {
@@ -118,9 +119,11 @@ router.post('/', (req, res) => {
             "password": "supersecurepassword",
             "first_name": "Tammy",
             "last_name": "Reacher",
-            "job_id": 1
+            "job_id": 1,
+            "shift_id": 1
         }
     */
+    
 });
 
 // POST /api/employees/login
