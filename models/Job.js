@@ -17,6 +17,10 @@ Job.init(
         title: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        department: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
