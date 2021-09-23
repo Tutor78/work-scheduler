@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
                 model: Job,
                 attributes: [
                     'title',
-                    'department'
+                    'department_id'
                 ]
             },
             {
@@ -69,7 +69,7 @@ router.get('/:id', (req, res) => {
                 model: Job,
                 attributes: [
                     'title',
-                    'department'
+                    'department_id'
                 ]
             },
             {
