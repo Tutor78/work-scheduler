@@ -29,6 +29,11 @@ div.title {
     margin-bottom: 20px;
 }
 
+.menu {
+    margin: auto;
+    text-align: center;
+}
+
 .lowered {
     margin-top: 37px;
 }
@@ -38,7 +43,14 @@ div.title {
 }
 
 .container-wrapper {
-    margin: 30px;
+    margin-top: 15px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.container-wrapper-grid {
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .grid-container {

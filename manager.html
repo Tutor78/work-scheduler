@@ -26,11 +26,41 @@
     </div>
 
     <div class="container-fluid">
+        <div class="container-wrapper">
+            <div class="container-fluid" id="menu">
+                <div class="row">
+                    <div class="col menu" id="current-day">
+                        <h2> Week Of </h2>
+                        <!-- Displays the first Sunday of the week currently selected -->
+                        <h2>9/19/2021</h2>
+                    </div>
+                    <div class="col menu">
+                        <h2> Department </h2>
+                        <!-- Use Javascript to display the department selected in the drop down menu -->
+                        <h2> One </h2>
+                    </div>
+                    <div class="col menu">
+                        <h2> Employee </h2>
+                        <!-- Use Javascript to display the employee selected -->
+                        <h2> John </h2>
+                    </div>
+                    <div class="col menu">
+                        <h2> Hours Available </h2>
+                        <!-- Use Javascript to display how many hours this employee is available -->
+                        <h2> 40 </h2>
+                    </div>
+                    <div class="col menu">
+                        <h2> Hours Scheduled </h2>
+                        <!-- Use Javascript to display how many hours this employee is scheduled so far -->
+                        <!-- Will display red if scheduled for more hours than available -->
+                        <h2> 20 </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-1">
-                <h2 class="week-of">Week of:</h2>
-                <!-- Use Moment.js here to get the current week -->
-                <h2 class="week-of">9/19</h2>
                 <!-- Publishes schedule -->
                 <button type="button" class="btn btn-success btn-lg">
                     Publish
@@ -73,7 +103,7 @@
                 </div>
             </div>
             <div class="col-md-11">
-                <div class="container-wrapper">
+                <div class="container-wrapper-grid">
                     <div class="container-fluid grid-container">
                         <!-- Day of week labels -->
                         <div class="row labels">
