@@ -1,8 +1,13 @@
 const{ DataTypes, Model } = require('sequelize');
+const bcrypt = require('bcryptjs');
 
 const sequelize = require('../config/connection');
 
-class Employee extends Model {}
+class Employee extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 // defines the employee table
 Employee.init(
@@ -56,6 +61,19 @@ Employee.init(
         }
     },
     {
+
+        // sets up the hashes for the employee's password on creation and on update
+        hooks: {
+            async beforeCreate(newEmployeeData) {
+                newEmployeeData.password = await bcrypt.hash(newEmployeeData.password, 10);
+                return newEmployeeData;
+            },
+
+            async beforeUpdate(updatedEmployeeData) {
+                updatedEmployeeData.password = await bcrypt.hash(updatedEmployeeData.password, 10);
+                return updatedEmployeeData
+            }
+        },
         // pass in the sequelize connection
         sequelize,
         // disable automatically adding created at/updated at fields
