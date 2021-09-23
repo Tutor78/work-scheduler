@@ -34,10 +34,6 @@ button.btn {
     border: 1px solid #2f3a37;
 }
 
-.lowered {
-    margin-top: 37px;
-}
-
 .container-wrapper {
     margin: 30px;
 }
@@ -61,5 +57,10 @@ button.btn {
     background-color: rgba(77, 130, 179, 0.2);
     border: 1px solid black;
     padding: 20px;
+    text-align: center;
+}
+
+.menu {
+    margin: auto;
     text-align: center;
 }

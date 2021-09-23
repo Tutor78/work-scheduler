@@ -29,23 +29,31 @@
     <div class="container-wrapper">
         <div class="container-fluid" id="menu">
             <div class="row">
-                <div class="col" id="current-day">
-                    <h2>Todays Date:</h2>
+                <div class="col menu" id="current-day">
+                    <h2> Todays Date </h2>
                     <!-- Use Moment.js here to get current day -->
                     <h2>9/21/2021</h2>
                 </div>
-                <div class="col">
+                <div class="col menu">
+                    <h2> Shifts </h2>
+                    <!-- Update grid to only display logged in user's schedule -->
+                    <button type="button" class="btn"> My Shifts</button>
+                    <!-- Update grid to show all employee schedules -->
+                    <button type="button" class="btn"> Show All </button>
+                </div>
+                <div class="col menu">
                     <!-- Update grid to display only selected department's schedules -->
-                    <h2>Departments:</h2>
+                    <h2> Departments </h2>
                     <button type="button" class="btn"> One </button>
                     <button type="button" class="btn"> Two </button>
                     <button type="button" class="btn"> Three </button>
                 </div>
-                <div class="col">
-                    <!-- Update grid to only display logged in user's schedule -->
-                    <button type="button" class="btn lowered"> My Shifts</button>
-                    <!-- Update grid to show all employee schedules -->
-                    <button type="button" class="btn lowered"> Show All </button>
+                <div class="col menu">
+                    <h2> Week </h2>
+                    <!-- Update grid to display current week's schedule -->
+                    <button type="button" class="btn"> Current Week </button>
+                    <!-- Update grid to show next week's schedule -->
+                    <button type="button" class="btn"> Next Week </button>
                 </div>
             </div>
         </div>
@@ -79,7 +87,7 @@
                 </div>
             </div>
             <!-- Morning Shifts -->
-            <div class="row morning">
+            <div class="row AM">
                 <div class="col grid-item">
             
                 </div>
@@ -103,7 +111,7 @@
                 </div>
             </div>
             <!-- Afternoon Shifts -->
-            <div class="row afternoon">
+            <div class="row PM">
                 <div class="col grid-item">
                 
                 </div>
@@ -124,30 +132,6 @@
                 </div>
                 <div class="col grid-item">
                 
-                </div>
-            </div>
-            <!-- Night Shifts -->
-            <div class="row night">
-                <div class="col grid-item">
-                
-                </div>
-                <div class="col grid-item">
-                    
-                </div>
-                <div class="col grid-item">
-                
-                </div>
-                <div class="col grid-item">
-                    
-                </div>
-                <div class="col grid-item">
-                
-                </div>
-                <div class="col grid-item">
-                
-                </div>
-                <div class="col grid-item">
-            
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <h1 id="title">My Schedule</h1>
+                    <h1 id="title">Schedule</h1>
                 </div>
             </div>
         </div>
@@ -35,6 +35,16 @@
                 <button type="button" class="btn btn-success btn-lg">
                     Publish
                 </button>
+                <!-- Dropdown menu where manager selects which week to work on -->
+                <div class="dropdown">
+
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                        Week
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item disabled" href="#">Week</a> <a class="dropdown-item" href="#"> Current Week </a> <a class="dropdown-item" href="#"> Next Week </a>
+                    </div>
+                </div>
                 <!-- Dropdown menu where manager selects which department to work on -->
                 <div class="dropdown">
 
@@ -90,9 +100,9 @@
                             </div>
                         </div>
                         <!-- Morning Shifts -->
-                        <div class="row morning">
+                        <div class="row AM">
                             <div class="col grid-item">
-                        
+                            <!-- On click function added to these -->
                             </div>
                             <div class="col grid-item">
                     
@@ -114,7 +124,7 @@
                             </div>
                         </div>
                         <!-- Afternoon Shifts -->
-                        <div class="row afternoon">
+                        <div class="row PM">
                             <div class="col grid-item">
                             
                             </div>
@@ -135,30 +145,6 @@
                             </div>
                             <div class="col grid-item">
                             
-                            </div>
-                        </div>
-                        <!-- Night Shifts -->
-                        <div class="row night">
-                            <div class="col grid-item">
-                            
-                            </div>
-                            <div class="col grid-item">
-                                
-                            </div>
-                            <div class="col grid-item">
-                            
-                            </div>
-                            <div class="col grid-item">
-                                
-                            </div>
-                            <div class="col grid-item">
-                            
-                            </div>
-                            <div class="col grid-item">
-                            
-                            </div>
-                            <div class="col grid-item">
-                        
                             </div>
                         </div>
                     </div>
