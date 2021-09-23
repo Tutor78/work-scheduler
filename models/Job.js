@@ -18,9 +18,12 @@ Job.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        department: {
-            type: DataTypes.STRING,
-            allowNull: false
+        department_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'department',
+                key: 'id'
+            }
         }
     },
     {

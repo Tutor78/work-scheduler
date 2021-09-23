@@ -1,12 +1,18 @@
-INSERT INTO job (title, department)
+INSERT INTO department (name)
+VALUES
+    ('Office'),
+    ('Kitchen'),
+    ('FoH');
+
+INSERT INTO job (title, department_id)
 VALUES 
-    ('Manager', 'Office'),
-    ('Line Cook', 'Kitchen'),
-    ('Prep Cook', 'Kitchen'),
-    ('Expo', 'Kitchen'),
-    ('Host', 'FoH'),
-    ('Server', 'FoH'),
-    ('Bartender', 'FoH');
+    ('Manager', 1),
+    ('Line Cook', 2),
+    ('Prep Cook', 2),
+    ('Expo', 2),
+    ('Host', 3),
+    ('Server', 3),
+    ('Bartender', 3);
 
 INSERT INTO shift (shift_name, start_time, end_time)
 VALUES
