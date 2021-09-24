@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Employee, Job, Shift, Day } = require('../../models');
+const { Employee, Job, Shift, Day, Department } = require('../../models');
 
 // GET /api/employees/
 router.get('/', (req, res) => {
@@ -16,9 +16,14 @@ router.get('/', (req, res) => {
             {
                 model: Job,
                 attributes: [
-                    'title',
-                    'department_id'
-                ]
+                    'title'
+                ],
+                include: {
+                    model: Department,
+                    attributes: [
+                        'name'
+                    ]
+                }
             },
             {
                 model: Shift,
@@ -68,9 +73,14 @@ router.get('/:id', (req, res) => {
             {
                 model: Job,
                 attributes: [
-                    'title',
-                    'department_id'
-                ]
+                    'title'
+                ],
+                include: {
+                    model: Department,
+                    attributes: [
+                        'name'
+                    ]
+                }
             },
             {
                 model: Shift,

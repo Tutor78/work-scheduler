@@ -1,11 +1,9 @@
 const router = require('express').Router();
 
 const employeeRoutes = require('./employee-routes');
-const jobRoutes = require('./job-routes');
-const departmentRoutes = require('./department-routes');
+const availabilityRoutes = require('./availability-routes');
 
 router.use('/employees', employeeRoutes);
-router.use('/jobs', jobRoutes);
-router.use('/departments', departmentRoutes);
+router.use('/availability', availabilityRoutes);
 
 module.exports = router;
