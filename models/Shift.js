@@ -14,8 +14,8 @@ Shift.init(
             autoIncrement: true
         },
         // designates the shift name eg. Morning, Afternoon, Night, All Day
-        shift_name: {
-            type: DataTypes.STRING,
+        shift_date: {
+            type: DataTypes.DATE,
             allowNull: false
         },
         // sets the start time for the shift in question
@@ -27,6 +27,13 @@ Shift.init(
         end_time: {
             type: DataTypes.TIME,
             allowNull: false
+        },
+        employee_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'employee',
+                key: 'id'
+            }
         }
     },
     {
