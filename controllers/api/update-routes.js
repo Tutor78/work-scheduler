@@ -21,3 +21,5 @@ router.post('/departments', (req, res) => {
 router.post('/jobs', (req, res) => {
     // logic to create new jobs
 });
+
+module.exports = router;

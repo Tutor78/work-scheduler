@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
     // logic to retrieve all employee information
     Employee.findAll({
         attributes: [
+            'id',
             'first_name',
             'last_name',
             'email'
@@ -108,6 +109,7 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [
+            'id',
             'first_name',
             'last_name',
             'email'
