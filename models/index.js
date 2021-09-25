@@ -34,7 +34,15 @@ Department.hasMany(Job, {
     foreignKey: 'department_id'
 });
 
+Employee.hasOne(Monday, {
+    foreignKey: 'employee_id'
+});
+
 Monday.belongsTo(Employee, {
+    foreignKey: 'employee_id'
+});
+
+Employee.hasOne(Tuesday, {
     foreignKey: 'employee_id'
 });
 
@@ -42,7 +50,15 @@ Tuesday.belongsTo(Employee, {
     foreignKey: 'employee_id'
 });
 
+Employee.hasOne(Wednesday, {
+    foreignKey: 'employee_id'
+});
+
 Wednesday.belongsTo(Employee, {
+    foreignKey: 'employee_id'
+});
+
+Employee.hasOne(Thursday, {
     foreignKey: 'employee_id'
 });
 
@@ -50,11 +66,23 @@ Thursday.belongsTo(Employee, {
     foreignKey: 'employee_id'
 });
 
+Employee.hasOne(Friday, {
+    foreignKey: 'employee_id'
+});
+
 Friday.belongsTo(Employee, {
     foreignKey: 'employee_id'
 });
 
+Employee.hasOne(Saturday, {
+    foreignKey: 'employee_id'
+});
+
 Saturday.belongsTo(Employee, {
+    foreignKey: 'employee_id'
+});
+
+Employee.hasOne(Sunday, {
     foreignKey: 'employee_id'
 });
 
