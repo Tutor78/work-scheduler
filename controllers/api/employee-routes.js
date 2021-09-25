@@ -17,12 +17,14 @@ router.get('/', (req, res) => {
             {
                 model: Job,
                 attributes: [
+                    'id',
                     'title'
                 ],
                 include: [
                     {
                         model: Department,
                         attributes: [
+                            'id',
                             'name'
                         ]
                     },
@@ -31,6 +33,7 @@ router.get('/', (req, res) => {
             {
                 model: Shift,
                 attributes: [
+                    'id',
                     'shift_date',
                     'start_time',
                     'end_time'
@@ -118,12 +121,14 @@ router.get('/:id', (req, res) => {
             {
                 model: Job,
                 attributes: [
+                    'id',
                     'title'
                 ],
                 include: [
                     {
                         model: Department,
                         attributes: [
+                            'id',
                             'name'
                         ]
                     },
@@ -132,6 +137,7 @@ router.get('/:id', (req, res) => {
             {
                 model: Shift,
                 attributes: [
+                    'id',
                     'shift_date',
                     'start_time',
                     'end_time'

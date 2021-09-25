@@ -8,12 +8,14 @@ router.get('/departments', (req, res) => {
     // logic to search for employee availability by department
     Department.findAll({
         attributes: [
+            'id',
             'name'
         ],
         include: [
             {
                 model: Job,
                 attributes: [
+                    'id',
                     'title'
                 ],
                 include: [
@@ -100,12 +102,14 @@ router.get('/jobs', (req, res) => {
     // logic to search for availability by job
     Job.findAll({
         attributes: [
+            'id',
             'title'
         ],
         include: [
             {
                 model: Department,
                 attributes: [
+                    'id',
                     'name'
                 ]
             },
@@ -193,12 +197,14 @@ router.get('/departments/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [
+            'id',
             'name'
         ],
         include: [
             {
                 model: Job,
                 attributes: [
+                    'id',
                     'title'
                 ],
                 include: [
@@ -296,12 +302,14 @@ router.get('/jobs/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [
+            'id',
             'title'
         ],
         include: [
             {
                 model: Department,
                 attributes: [
+                    'id',
                     'name'
                 ]
             },
@@ -410,12 +418,14 @@ router.get('/monday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -454,12 +464,14 @@ router.get('/tuesday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -498,12 +510,14 @@ router.get('/wednesday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -542,12 +556,14 @@ router.get('/thursday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -586,12 +602,14 @@ router.get('/friday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -630,12 +648,14 @@ router.get('/saturday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -674,12 +694,14 @@ router.get('/sunday', (req, res) => {
                     {
                         model: Job,
                         attributes: [
+                            'id',
                             'title'
                         ],
                         include: [
                             {
                                 model: Department,
                                 attributes: [
+                                    'id',
                                     'name'
                                 ]
                             }
@@ -859,6 +881,8 @@ router.put('/sunday/:id', (req, res) => {
     })
 });
 
+// -- All Routes Pertaining to the Creation and Managing of shifts below --
+
 // POST /api/availability/shifts
 router.post('/shifts', (req, res) => {
     // logic to create new shifts fr employees
@@ -879,6 +903,50 @@ router.post('/shifts', (req, res) => {
         employee_id: req.body.employee_id
     })
     .then(dbShiftData => res.json(dbShiftData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+// PUT /api/availability/shifts/:id
+router.put('/shifts/:id', (req, res) => {
+    // logic to update a shift
+    Shift.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbShiftData => {
+        if (!dbShiftData) {
+            res.status(404).json({ message: 'There is no shift with that id!' });
+            return;
+        }
+
+        res.json(dbShiftData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.json(500).json(err);
+    })
+});
+
+// DELETE /api/availability/shift/:id
+router.delete('/shifts/:id', (req, res) => {
+    // logic to delete a shift
+    Shift.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbShiftData => {
+        if (!dbShiftData) {
+            res.status(404).json({ message: 'There is no shift with that id!' });
+            return;
+        }
+
+        res.json(dbShiftData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
