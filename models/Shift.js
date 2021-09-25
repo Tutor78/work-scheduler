@@ -15,7 +15,7 @@ Shift.init(
         },
         // designates the shift name eg. Morning, Afternoon, Night, All Day
         shift_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false
         },
         // sets the start time for the shift in question

@@ -703,9 +703,10 @@ router.put('/monday/:id', (req, res) => {
         example for req.body for updating
         {
             "is_available:" 1,
-            "start_time": 14:00:00,
-            "end_time": 20:00:00
+            "start_time": 14:00:00, (HH:MM:SS)
+            "end_time": 20:00:00 (HH:MM:SS)
         }
+        All times must be in utc format
     */
     Monday.update(req.body, {
         where: {
@@ -861,6 +862,27 @@ router.put('/sunday/:id', (req, res) => {
 // POST /api/availability/shifts
 router.post('/shifts', (req, res) => {
     // logic to create new shifts fr employees
+    /*
+        example for creating a shift: 
+        {
+            "shift_date": 2021-10-08 (YYYY-MM-DD),
+            "start_time": "10:00:00" (HH:MM:SS),
+            "end_time": "16:00:00" (HH:MM:SS),
+            "employee_id": 101
+        }
+        Everything must be in utc format
+    */
+    Shift.create({
+        shift_date: req.body.shift_date,
+        start_time: req.body.start_time,
+        end_time: req.body.end_time,
+        employee_id: req.body.employee_id
+    })
+    .then(dbShiftData => res.json(dbShiftData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
 
 module.exports = router;
