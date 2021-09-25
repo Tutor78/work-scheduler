@@ -28,6 +28,14 @@ router.get('/', (req, res) => {
                 ]
             },
             {
+                model: Shift,
+                attributes: [
+                    'shift_date',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
                 model: Monday,
                 attributes: [
                     'is_available',
@@ -120,6 +128,14 @@ router.get('/:id', (req, res) => {
                 ]
             },
             {
+                model: Shift,
+                attributes: [
+                    'shift_date',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
                 model: Monday,
                 attributes: [
                     'is_available',
@@ -202,7 +218,7 @@ router.post('/', (req, res) => {
             "password": "supersecurepassword",
             "first_name": "Tammy",
             "last_name": "Reacher",
-            "job_id": 1,
+            "job_id": 1
         }
     */
     Employee.create({
