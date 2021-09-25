@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Employee, Job, Shift, Day, Department } = require('../../models');
+
+const { Employee, Job, Department, Shift } = require('../../models');
+const { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = require('../../models');
 
 // GET /api/employees/
 router.get('/', (req, res) => {
@@ -7,44 +9,91 @@ router.get('/', (req, res) => {
     Employee.findAll({
         attributes: [
             'id',
-            'email',
             'first_name',
             'last_name',
-            'job_id'
+            'email'
         ],
         include: [
             {
                 model: Job,
                 attributes: [
+                    'id',
                     'title'
                 ],
-                include: {
-                    model: Department,
-                    attributes: [
-                        'name'
-                    ]
-                }
+                include: [
+                    {
+                        model: Department,
+                        attributes: [
+                            'id',
+                            'name'
+                        ]
+                    },
+                ]
             },
             {
                 model: Shift,
                 attributes: [
-                    'shift_name',
+                    'id',
+                    'shift_date',
                     'start_time',
                     'end_time'
                 ]
             },
             {
-                model: Day,
+                model: Monday,
                 attributes: [
-                    'monday',
-                    'tuesday',
-                    'wednesday',
-                    'thursday',
-                    'friday',
-                    'saturday',
-                    'sunday'
+                    'is_available',
+                    'start_time',
+                    'end_time'
                 ]
-
+            },
+            {
+                model: Tuesday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Wednesday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Thursday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Friday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Saturday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Sunday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
             }
         ]
     })
@@ -64,42 +113,90 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'email',
             'first_name',
             'last_name',
-            'job_id'
+            'email'
         ],
         include: [
             {
                 model: Job,
                 attributes: [
+                    'id',
                     'title'
                 ],
-                include: {
-                    model: Department,
-                    attributes: [
-                        'name'
-                    ]
-                }
+                include: [
+                    {
+                        model: Department,
+                        attributes: [
+                            'id',
+                            'name'
+                        ]
+                    },
+                ]
             },
             {
                 model: Shift,
                 attributes: [
-                    'shift_name',
+                    'id',
+                    'shift_date',
                     'start_time',
-                    'end_time'  
+                    'end_time'
                 ]
             },
             {
-                model: Day,
+                model: Monday,
                 attributes: [
-                    'monday',
-                    'tuesday',
-                    'wednesday',
-                    'thursday',
-                    'friday',
-                    'saturday',
-                    'sunday'
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Tuesday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Wednesday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Thursday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Friday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Saturday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
+                ]
+            },
+            {
+                model: Sunday,
+                attributes: [
+                    'is_available',
+                    'start_time',
+                    'end_time'
                 ]
             }
         ]
@@ -129,8 +226,7 @@ router.post('/', (req, res) => {
             "password": "supersecurepassword",
             "first_name": "Tammy",
             "last_name": "Reacher",
-            "job_id": 1,
-            "shift_id": 1
+            "job_id": 1
         }
     */
     Employee.create({
@@ -140,7 +236,6 @@ router.post('/', (req, res) => {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         job_id: req.body.job_id,
-        shift_id: req.body.shift_id
     })
     .then(dbEmployeeData => {
         req.session.save(() => {
