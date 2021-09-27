@@ -1,0 +1,127 @@
+<div class="container-wrapper">
+    <div class="title">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Log out and return to log in screen-->
+                <button type="button" class="btn" id="minimal-btn">Log Out</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="title">My Schedule</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Menu -->
+<div class="container-wrapper">
+    <div class="container-fluid" id="menu">
+        <div class="row">
+            <div class="col menu" id="current-day">
+                <h2> Todays Date </h2>
+                <!-- Use Moment.js here to get current day -->
+                <h2>9/21/2021</h2>
+            </div>
+            <div class="col menu">
+                <h2> Shifts </h2>
+                <!-- Update grid to only display logged in user's schedule -->
+                <button type="button" class="btn"> My Shifts</button>
+                <!-- Update grid to show all employee schedules -->
+                <button type="button" class="btn"> Show All </button>
+            </div>
+            <div class="col menu">
+                <!-- Update grid to display only selected department's schedules -->
+                <h2> Departments </h2>
+                <button type="button" class="btn"> One </button>
+                <button type="button" class="btn"> Two </button>
+                <button type="button" class="btn"> Three </button>
+            </div>
+            <div class="col menu">
+                <h2> Week </h2>
+                <!-- Update grid to display current week's schedule -->
+                <button type="button" class="btn"> Current Week </button>
+                <!-- Update grid to show next week's schedule -->
+                <button type="button" class="btn"> Next Week </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grid that displays current week's schedule -->
+<div class="container-wrapper">
+    <div class="container-fluid grid-container">
+        <!-- Day of week labels -->
+        <div class="row labels">
+            <div class="col grid-label">
+                <p>Sunday</p>
+            </div>
+            <div class="col grid-label">
+                <p>Monday</p>
+            </div>
+            <div class="col grid-label">
+                <p>Tuesday</p>
+            </div>
+            <div class="col grid-label">
+                <p>Wednesday</p>
+            </div>
+            <div class="col grid-label">
+                <p>Thursday</p>
+            </div>
+            <div class="col grid-label">
+                <p>Friday</p>
+            </div>
+            <div class="col grid-label">
+                <p>Saturday</p>
+            </div>
+        </div>
+        <!-- Morning Shifts -->
+        <div class="row AM">
+            <div class="col grid-item">
+        
+            </div>
+            <div class="col grid-item">
+    
+            </div>
+            <div class="col grid-item">
+    
+            </div>
+            <div class="col grid-item">
+        
+            </div>
+            <div class="col grid-item">
+        
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+        </div>
+        <!-- Afternoon Shifts -->
+        <div class="row PM">
+            <div class="col grid-item">
+            
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+            <div class="col grid-item">
+                
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+            <div class="col grid-item">
+            
+            </div>
+        </div>
+    </div>
+</div>

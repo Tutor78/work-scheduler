@@ -1,0 +1,176 @@
+<div class="container-wrapper">
+    <div class="title">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Log out and return to log in screen-->
+                <button type="button" class="btn" id="minimal-btn">Log Out</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="title">Schedule</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container-wrapper">
+        <div class="container-fluid" id="menu">
+            <div class="row">
+                <div class="col-md-1">
+            
+                </div>
+                <div class="col menu">s
+                    <h2> Week Of </h2>
+                    <!-- Displays the first Sunday of the week currently selected -->
+                    <h2>9/19/2021</h2>
+                </div>
+                <div class="col menu">
+                    <h2> Department </h2>
+                    <!-- Use Javascript to display the department selected in the drop down menu -->
+                    <h2> One </h2>
+                </div>
+                <div class="col menu">
+                    <h2> Employee </h2>
+                    <!-- Use Javascript to display the employee selected -->
+                    <h2> John </h2>
+                </div>
+                <div class="col menu">
+                    <h2> Hours Scheduled </h2>
+                    <!-- Use Javascript to display how many hours this employee is scheduled so far -->
+                    <!-- Will display red if scheduled for more hours than available -->
+                    <h2> 20 </h2>
+                </div>
+                <div class="col menu">
+                    <h2> Hours Available </h2>
+                    <!-- Use Javascript to display how many hours this employee is available -->
+                    <h2> 40 </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">
+            <!-- Publishes schedule -->
+            <button type="button" class="btn btn-success btn-lg">
+                Publish
+            </button>
+            <!-- Dropdown menu where manager selects which week to work on -->
+            <div class="dropdown">
+
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                    Week
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item disabled" href="#">Week</a> <a class="dropdown-item" href="#"> Current Week </a> <a class="dropdown-item" href="#"> Next Week </a>
+                </div>
+            </div>
+            <!-- Dropdown menu where manager selects which department to work on -->
+            <div class="dropdown">
+
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                    Dept.
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item disabled" href="#">Show All</a> <a class="dropdown-item" href="#">Department One</a> <a class="dropdown-item" href="#">Department Two</a>
+                </div>
+            </div>
+            <!-- Employees in the department selected above then appear below -->
+            <div class="btn-group btn-group-vertical btn-group-md" role="group">
+                <!-- Manager clicks their button then clicks the grid to the right to assign them -->
+                <button class="btn btn-secondary" type="button">
+                    John
+                </button> 
+                <button class="btn btn-secondary" type="button">
+                    Laura
+                </button> 
+                <button class="btn btn-secondary" type="button">
+                    Andrew
+                </button> 
+                <button class="btn btn-secondary" type="button">
+                    Sarah
+                </button>
+            </div>
+        </div>
+        <div class="col-md-11">
+            <div class="container-wrapper-grid">
+                <div class="container-fluid grid-container">
+                    <!-- Day of week labels -->
+                    <div class="row labels">
+                        <div class="col grid-label">
+                            <p>Sunday</p>
+                        </div>
+                        <div class="col grid-label">
+                            <p>Monday</p>
+                        </div>
+                        <div class="col grid-label">
+                            <p>Tuesday</p>
+                        </div>
+                        <div class="col grid-label">
+                            <p>Wednesday</p>
+                        </div>
+                        <div class="col grid-label">
+                            <p>Thursday</p>
+                        </div>
+                        <div class="col grid-label">
+                            <p>Friday</p>
+                        </div>
+                        <div class="col grid-label">
+                            <p>Saturday</p>
+                        </div>
+                    </div>
+                    <!-- Morning Shifts -->
+                    <div class="row AM">
+                        <div class="col grid-item">
+                        <!-- On click function added to these -->
+                        </div>
+                        <div class="col grid-item">
+                
+                        </div>
+                        <div class="col grid-item">
+                
+                        </div>
+                        <div class="col grid-item">
+                    
+                        </div>
+                        <div class="col grid-item">
+                    
+                        </div>
+                        <div class="col grid-item">
+                        
+                        </div>
+                        <div class="col grid-item">
+                        
+                        </div>
+                    </div>
+                    <!-- Afternoon Shifts -->
+                    <div class="row PM">
+                        <div class="col grid-item">
+                        
+                        </div>
+                        <div class="col grid-item">
+                        
+                        </div>
+                        <div class="col grid-item">
+                        
+                        </div>
+                        <div class="col grid-item">
+                            
+                        </div>
+                        <div class="col grid-item">
+                        
+                        </div>
+                        <div class="col grid-item">
+                        
+                        </div>
+                        <div class="col grid-item">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
