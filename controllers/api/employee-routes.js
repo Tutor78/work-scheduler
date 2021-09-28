@@ -235,7 +235,7 @@ router.post('/', (req, res) => {
         password: req.body.password,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        job_id: req.body.job_id,
+        job_id: req.body.job_id
     })
     .then(dbEmployeeData => {
         req.session.save(() => {
@@ -278,7 +278,7 @@ router.post('/login', (req, res) => {
             req.session.email = dbEmployeeData.email;
             req.session.loggedIn = true;
 
-            res.json({ user: dbEmployeeData, message: 'You are now logged in!' });            
+            res.json({ user: dbEmployeeData, message: 'You are now logged in!' });     
         })
     })
     .catch(err => {
