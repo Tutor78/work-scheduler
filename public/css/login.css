@@ -4,6 +4,14 @@ body {
     background-repeat: no-repeat;
 }
 
+.email-label {
+    margin-right: 30px;
+}
+
+.password-label {
+    margin-right: 3px;
+}
+
 #minimal-btn {
     float: right;
     border: 1px solid black;
