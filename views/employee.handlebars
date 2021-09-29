@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Log out and return to log in screen-->
-                <button type="button" class="btn" id="minimal-btn">Log Out</button>
+                <button type="button" class="btn logout-btn" id="minimal-btn">Log Out</button>
             </div>
         </div>
         <div class="row">
@@ -21,10 +21,10 @@
             <div class="col menu" id="current-day">
                 <h2> Todays Date </h2>
                 <!-- Use Moment.js here to get current day -->
-                <h2>9/21/2021</h2>
+                <h2 id="week-of"></h2>
             </div>
             <div class="col menu">
-                <h2> Shifts </h2>
+                <h2> Shifts (Coming Soon)</h2>
                 <!-- Update grid to only display logged in user's schedule -->
                 <button type="button" class="btn"> My Shifts</button>
                 <!-- Update grid to show all employee schedules -->
@@ -32,13 +32,13 @@
             </div>
             <div class="col menu">
                 <!-- Update grid to display only selected department's schedules -->
-                <h2> Departments </h2>
+                <h2> Departments (Coming Soon)</h2>
                 <button type="button" class="btn"> One </button>
                 <button type="button" class="btn"> Two </button>
                 <button type="button" class="btn"> Three </button>
             </div>
             <div class="col menu">
-                <h2> Week </h2>
+                <h2> Week (Coming Soon)</h2>
                 <!-- Update grid to display current week's schedule -->
                 <button type="button" class="btn"> Current Week </button>
                 <!-- Update grid to show next week's schedule -->
@@ -54,74 +54,50 @@
         <!-- Day of week labels -->
         <div class="row labels">
             <div class="col grid-label">
-                <p>Sunday</p>
+                <p id="sunday"></p>
             </div>
             <div class="col grid-label">
-                <p>Monday</p>
+                <p id="monday"></p>
             </div>
             <div class="col grid-label">
-                <p>Tuesday</p>
+                <p id="tuesday"></p>
             </div>
             <div class="col grid-label">
-                <p>Wednesday</p>
+                <p id="wednesday"></p>
             </div>
             <div class="col grid-label">
-                <p>Thursday</p>
+                <p id="thursday"></p>
             </div>
             <div class="col grid-label">
-                <p>Friday</p>
+                <p id="friday"></p>
             </div>
             <div class="col grid-label">
-                <p>Saturday</p>
+                <p id="saturday"></p>
             </div>
         </div>
         <!-- Morning Shifts -->
         <div class="row AM">
-            <div class="col grid-item">
-        
-            </div>
-            <div class="col grid-item">
-    
-            </div>
-            <div class="col grid-item">
-    
-            </div>
-            <div class="col grid-item">
-        
-            </div>
-            <div class="col grid-item">
-        
-            </div>
-            <div class="col grid-item">
-            
-            </div>
-            <div class="col grid-item">
-            
-            </div>
+            <div class="col grid-item" id="sunday-morning"></div>
+            <div class="col grid-item" id="monday-morning"></div>
+            <div class="col grid-item" id="tuesday-morning"></div>
+            <div class="col grid-item" id="wednesday-morning"></div>
+            <div class="col grid-item" id="thursday-morning"></div>
+            <div class="col grid-item" id="friday-morning"></div>
+            <div class="col grid-item" id="saturday-morning"></div>
         </div>
         <!-- Afternoon Shifts -->
         <div class="row PM">
-            <div class="col grid-item">
-            
-            </div>
-            <div class="col grid-item">
-            
-            </div>
-            <div class="col grid-item">
-            
-            </div>
-            <div class="col grid-item">
-                
-            </div>
-            <div class="col grid-item">
-            
-            </div>
-            <div class="col grid-item">
-            
-            </div>
-            <div class="col grid-item">
-            
-            </div>
+            <div class="col grid-item" id="sunday-afternoon"></div>
+            <div class="col grid-item" id="monday-afternoon"></div>
+            <div class="col grid-item" id="tuesday-afternoon"></div>
+            <div class="col grid-item" id="wednesday-afternoon"></div>
+            <div class="col grid-item" id="thursday-afternoon"></div>
+            <div class="col grid-item" id="friday-afternoon"></div>
+            <div class="col grid-item" id="saturday-afternoon"></div>
         </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script type="module" src="/javascript/employee.js"></script>

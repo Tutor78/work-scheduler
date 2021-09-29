@@ -885,29 +885,13 @@ router.put('/sunday/:id', (req, res) => {
 });
 
 // -- All Routes Pertaining to the Creation and Managing of shifts below --
-router.get('/shifts/:id', (req, res) => {
+router.get('/shifts', (req, res) => {
     Shift.findAll({
         where: {
-            employee_id: req.params.id
-        },
-        attributes: [
-            'start_date',
-            'start_time',
-            'end_time'
-        ]
-    })
-    .then(dbShiftData => {
-        if (!dbShiftData) {
-            res.status(404).json({ message: 'There is no emmployee with that id' })
-            return;
+            employee_id: req.session.user_id
         }
-
-        res.json(dbShiftData);
     })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbShiftData => res.json(dbShiftData))
 })
 
 
