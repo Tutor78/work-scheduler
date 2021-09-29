@@ -83,6 +83,9 @@ router.get('/departments', (req, res) => {
                                     'start_time',
                                     'end_time'
                                 ]
+                            },
+                            {
+                                model: Shift
                             }
                         ]
                     }

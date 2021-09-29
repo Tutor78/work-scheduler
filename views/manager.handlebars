@@ -21,20 +21,20 @@
                 <div class="col-md-1">
             
                 </div>
-                <div class="col menu">s
+                <div class="col menu">
                     <h2> Week Of </h2>
                     <!-- Displays the first Sunday of the week currently selected -->
-                    <h2>9/19/2021</h2>
+                    <h2 id="weekOfDate">9/19/2021</h2>
                 </div>
                 <div class="col menu">
                     <h2> Department </h2>
                     <!-- Use Javascript to display the department selected in the drop down menu -->
-                    <h2> One </h2>
+                    <h2 id="department-name"> One </h2>
                 </div>
                 <div class="col menu">
                     <h2> Employee </h2>
                     <!-- Use Javascript to display the employee selected -->
-                    <h2> John </h2>
+                    <h2 id="employee-name"></h2>
                 </div>
                 <div class="col menu">
                     <h2> Hours Scheduled </h2>
@@ -58,40 +58,29 @@
                 Publish
             </button>
             <!-- Dropdown menu where manager selects which week to work on -->
-            <div class="dropdown">
-
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+            {{!-- <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
                     Week
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item disabled" href="#">Week</a> <a class="dropdown-item" href="#"> Current Week </a> <a class="dropdown-item" href="#"> Next Week </a>
+                    <a class="dropdown-item disabled" href="#">Week</a> 
+                    <a class="dropdown-item" href="#">Current Week</a> 
+                    <a class="dropdown-item" href="#"> Next Week </a>
                 </div>
-            </div>
+            </div> --}}
             <!-- Dropdown menu where manager selects which department to work on -->
             <div class="dropdown">
-
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
                     Dept.
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item disabled" href="#">Show All</a> <a class="dropdown-item" href="#">Department One</a> <a class="dropdown-item" href="#">Department Two</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="department-dropdown">
+                    {{!-- append departments here --}}
                 </div>
             </div>
             <!-- Employees in the department selected above then appear below -->
-            <div class="btn-group btn-group-vertical btn-group-md" role="group">
+            <div class="btn-group btn-group-vertical btn-group-md" role="group" id="employee-list">
                 <!-- Manager clicks their button then clicks the grid to the right to assign them -->
-                <button class="btn btn-secondary" type="button">
-                    John
-                </button> 
-                <button class="btn btn-secondary" type="button">
-                    Laura
-                </button> 
-                <button class="btn btn-secondary" type="button">
-                    Andrew
-                </button> 
-                <button class="btn btn-secondary" type="button">
-                    Sarah
-                </button>
+                {{!-- this is where the employee names are added --}}
             </div>
         </div>
         <div class="col-md-11">
@@ -174,3 +163,6 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script type="module" src="/javascript/manager.js"></script>
