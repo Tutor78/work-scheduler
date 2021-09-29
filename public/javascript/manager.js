@@ -17,6 +17,7 @@ let saturday = moment().day(6);
 const departmentDropdownEl = document.querySelector('#department-dropdown');
 const employeeListEl = document.querySelector('#employee-list');
 const publishEl = document.querySelector('#publish-btn');
+const logoutEl = document.querySelector('.logout-btn');
 
 function departmentDropdownHandler(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -78,6 +79,19 @@ function employeeShiftHandler(arr, employee) {
     }
 }
 
+async function logoutHandler() {
+    const response = await fetch('/api/employees/logout', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+        document.location.replace('/');
+    } else {
+        alert(response.statusText);
+    }
+}
+
 fetch('/api/availability/departments')
     .then(response => response.json())
     .then(departmentData => {
@@ -99,6 +113,8 @@ document.querySelector('#wednesday').innerText = wednesday.format("dddd, MM/DD")
 document.querySelector('#thursday').innerText = thursday.format("dddd, MM/DD");
 document.querySelector('#friday').innerText = friday.format("dddd, MM/DD");
 document.querySelector('#saturday').innerText = saturday.format("dddd, MM/DD");
+
+logoutEl.addEventListener('click', logoutHandler);
 
 departmentDropdownEl.addEventListener('click', (event) => {
     event.preventDefault();
