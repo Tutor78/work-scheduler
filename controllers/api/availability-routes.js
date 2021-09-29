@@ -882,6 +882,17 @@ router.put('/sunday/:id', (req, res) => {
 });
 
 // -- All Routes Pertaining to the Creation and Managing of shifts below --
+router.get('shifts/:id', (req, res) => {
+    Shift.findAll({
+        where: {
+            id: employee_id
+        },
+        attributes: [
+            ''
+        ]
+    })
+})
+
 
 // POST /api/availability/shifts
 router.post('/shifts', (req, res) => {
