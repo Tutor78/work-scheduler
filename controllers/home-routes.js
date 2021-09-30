@@ -1,10 +1,25 @@
 const router = require('express').Router();
+const { Job } = require('../models');
 
 // gets the landing page which is the login page
 router.get('/', (req, res) => {
-    const login = true;
+    Job.findAll({})
+        .then(dbJobData => {
+            const jobTitleArr = [];
 
-    res.render('login', { login });
+            for (let i = 0; i < dbJobData.length; i++) {
+                jobTitleArr.push(dbJobData[i].title);
+            }
+
+            const data = {
+                jobTitleArr: jobTitleArr,
+                login: true
+            }
+
+            
+
+            res.render('login', data);
+        });
 });
 
 router.get('/manager', (req, res) => {
