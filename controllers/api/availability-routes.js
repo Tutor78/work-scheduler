@@ -297,25 +297,115 @@ router.get('/departments/:id', (req, res) => {
     })
 });
 
-// GET /api/availability/jobs/:id
-router.get('/jobs/:id', (req, res) => {
-    // logic to search for employee availability based on one job
+// // GET /api/availability/jobs/:id
+// router.get('/jobs/:id', (req, res) => {
+//     // logic to search for employee availability based on one job
+//     Job.findOne({
+//         where: {
+//             id: req.params.id
+//         },
+//         attributes: [
+//             'id',
+//             'title'
+//         ],
+//         include: [
+//             {
+//                 model: Department,
+//                 attributes: [
+//                     'id',
+//                     'name'
+//                 ]
+//             },
+//             {
+//                 model: Employee,
+//                 attributes: [
+//                     'id',
+//                     'first_name',
+//                     'last_name',
+//                     'email'
+//                 ],
+//                 include: [
+//                     {
+//                         model: Monday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     },
+//                     {
+//                         model: Tuesday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     },
+//                     {
+//                         model: Wednesday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     },
+//                     {
+//                         model: Thursday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     },
+//                     {
+//                         model: Friday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     },
+//                     {
+//                         model: Saturday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     },
+//                     {
+//                         model: Sunday,
+//                         attributes: [
+//                             'is_available',
+//                             'start_time',
+//                             'end_time'
+//                         ]
+//                     }
+//                 ]
+//             }
+//         ]
+//     })
+//     .then(dbJobData => {
+//         if (!dbJobData) {
+//             res.status(404).json({ message: 'There is no job with that id!' });
+//             return;
+//         }
+
+//         res.json(dbJobData);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// })
+
+// GET /api/availability/jobs/:name
+router.get('/jobs/:name', (req, res) => {
     Job.findOne({
         where: {
-            id: req.params.id
+            title: req.params.name
         },
-        attributes: [
-            'id',
-            'title'
-        ],
         include: [
-            {
-                model: Department,
-                attributes: [
-                    'id',
-                    'name'
-                ]
-            },
             {
                 model: Employee,
                 attributes: [
@@ -323,71 +413,13 @@ router.get('/jobs/:id', (req, res) => {
                     'first_name',
                     'last_name',
                     'email'
-                ],
-                include: [
-                    {
-                        model: Monday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    },
-                    {
-                        model: Tuesday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    },
-                    {
-                        model: Wednesday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    },
-                    {
-                        model: Thursday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    },
-                    {
-                        model: Friday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    },
-                    {
-                        model: Saturday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    },
-                    {
-                        model: Sunday,
-                        attributes: [
-                            'is_available',
-                            'start_time',
-                            'end_time'
-                        ]
-                    }
                 ]
             }
         ]
     })
     .then(dbJobData => {
         if (!dbJobData) {
-            res.status(404).json({ message: 'There is no job with that id!' });
+            res.status(404).json({ message: 'There is no job with that name!' });
             return;
         }
 
