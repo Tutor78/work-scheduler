@@ -72,6 +72,8 @@ function signupHandler() {
                     }
                 })
             })
+    } else {
+        $('#complete-form-modal').modal('show');
     }
 }
 

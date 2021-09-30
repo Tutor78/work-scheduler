@@ -22,11 +22,12 @@ async function loginFormHandler(event) {
             }
         })
         .catch(err => {
-            console.log(err);
+            $('#no-user-modal').modal('show');
+            // console.log(err);
         })
 
     } else {
-        alert('Please enter a valid email and password');
+        $('#complete-form-modal').modal('show');
     }
 
 
