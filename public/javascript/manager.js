@@ -519,10 +519,13 @@ publishEl.addEventListener('click', (event) => {
                 })
             }
 
+            // shows the progress bar
             $('#publish-modal').modal('show');
 
+            // varible to hold the progress bar's progrss
             let x = 1;
 
+            // handle updating the progress bar
             setInterval(() => {
                 $('#publish-modal .progress-bar').attr('aria-valuenow', x);
                 $('#publish-modal .progress-bar').attr('style', `width: ${x}%`);
@@ -537,8 +540,10 @@ publishEl.addEventListener('click', (event) => {
                 // console.log(x);
             }, 80);
 
-            document.querySelector('html').setAttribute('style', 'pointer-events: none;');
+            // disables the mouse while the progress bar is running
+            // document.querySelector('html').setAttribute('style', 'pointer-events: none;');
 
+            // reloads the page after 10 seconds
             setTimeout(() => {
                 document.location.reload();
             }, 10000);
