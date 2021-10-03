@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-md-1">
             <!-- Publishes schedule -->
-            <button type="button" class="btn btn-success btn-lg" id="publish-btn">
+            <button type="button" class="btn btn-success btn-lg col-md-12" id="publish-btn">
                 Publish
             </button>
             <!-- Dropdown menu where manager selects which week to work on -->
@@ -70,7 +70,7 @@
             </div> --}}
             <!-- Dropdown menu where manager selects which department to work on -->
             <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                <button class="btn btn-primary dropdown-toggle col-md-12 mt-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
                     Dept.
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="department-dropdown">
@@ -87,48 +87,44 @@
             <div class="container-wrapper-grid">
                 <div class="container-fluid grid-container">
                     <!-- Day of week labels -->
-                    <div class="row labels">
-                        <div class="col grid-label">
-                            <p id="sunday"></p>
+                    <div id="shift-calendar">
+                        <div class="row labels">
+                            <div class="col p-0" id="sunday">
+                                <div class="grid-label" id="sunday-title"></div>
+                                <div class="grid-item" id="sunday-morning"></div>
+                                <div class="grid-item" id="sunday-afternoon"></div>
+                            </div>
+                            <div class="col p-0" id="monday">
+                                <div class="grid-label" id="monday-title"></div>
+                                <div class="grid-item" id="monday-morning"></div>
+                                <div class="grid-item" id="monday-afternoon"></div>
+                            </div>
+                            <div class="col p-0" id="tuesday">
+                                <div class="grid-label" id="tuesday-title"></div>
+                                <div class="grid-item" id="tuesday-morning"></div>
+                                <div class="grid-item" id="tuesday-afternoon"></div>
+                            </div>
+                            <div class="col p-0" id="wednesday">
+                                <div class="grid-label" id="wednesday-title"></div>
+                                <div class="grid-item" id="wednesday-morning"></div>
+                                <div class="grid-item" id="wednesday-afternoon"></div>
+                            </div>
+                            <div class="col p-0" id="thursday">
+                                <div class="grid-label" id="thursday-title"></div>
+                                <div class="grid-item" id="thursday-morning"></div>
+                                <div class="grid-item" id="thursday-afternoon"></div>
+                            </div>
+                            <div class="col p-0" id="friday">
+                                <div class="grid-label" id="friday-title"></div>
+                                <div class="grid-item" id="friday-morning"></div>
+                                <div class="grid-item" id="friday-afternoon"></div>
+                            </div>
+                            <div class="col p-0" id="saturday">
+                                <div class="grid-label" id="saturday-title"></div>
+                                <div class="grid-item" id="saturday-morning"></div>
+                                <div class="grid-item" id="saturday-afternoon"></div>
+                            </div>
                         </div>
-                        <div class="col grid-label">
-                            <p id="monday"></p>
-                        </div>
-                        <div class="col grid-label">
-                            <p id="tuesday"></p>
-                        </div>
-                        <div class="col grid-label">
-                            <p id="wednesday"></p>
-                        </div>
-                        <div class="col grid-label">
-                            <p id="thursday"></p>
-                        </div>
-                        <div class="col grid-label">
-                            <p id="friday"></p>
-                        </div>
-                        <div class="col grid-label">
-                            <p id="saturday"></p>
-                        </div>
-                    </div>
-                    <!-- Morning Shifts -->
-                    <div class="row AM">
-                        <div class="col grid-item" id="sunday-morning"></div>
-                        <div class="col grid-item" id="monday-morning"></div>
-                        <div class="col grid-item" id="tuesday-morning"></div>
-                        <div class="col grid-item" id="wednesday-morning"></div>
-                        <div class="col grid-item" id="thursday-morning"></div>
-                        <div class="col grid-item" id="friday-morning"></div>
-                        <div class="col grid-item" id="saturday-morning"></div>
-                    </div>
-                    <!-- Afternoon Shifts -->
-                    <div class="row PM">
-                        <div class="col grid-item" id="sunday-afternoon"></div>
-                        <div class="col grid-item" id="monday-afternoon"></div>
-                        <div class="col grid-item" id="tuesday-afternoon"></div>
-                        <div class="col grid-item" id="wednesday-afternoon"></div>
-                        <div class="col grid-item" id="thursday-afternoon"></div>
-                        <div class="col grid-item" id="friday-afternoon"></div>
-                        <div class="col grid-item" id="saturday-afternoon"></div>
                     </div>
                 </div>
             </div>
