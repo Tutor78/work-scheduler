@@ -73,7 +73,7 @@ function signupHandler() {
                 })
             })
     } else {
-        $('#complete-form-modal').modal('show');
+        document.querySelector('#complete-signup-alert').classList.remove('collapse');
     }
 }
 

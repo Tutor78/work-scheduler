@@ -27,16 +27,17 @@
                     <h2 id="week-of"></h2>
                 </div>
                 <div class="col menu">
-                    <h2> Department </h2>
-                    <!-- Use Javascript to display the department selected in the drop down menu -->
-                    <h2 id="department-name"> N/A </h2>
-                </div>
-                <div class="col menu">
                     <h2> Employee </h2>
                     <!-- Use Javascript to display the employee selected -->
                     <h2 id="employee-name"></h2>
                 </div>
                 <div class="col menu">
+                    <h2> Department </h2>
+                    <!-- Use Javascript to display the department selected in the drop down menu -->
+                    <h2 id="department-name"> N/A </h2>
+                </div>
+                {{!-- TODO: add functionality for availability and hours scheduled --}}
+                {{!-- <div class="col menu">
                     <h2> Hours Scheduled </h2>
                     <!-- Use Javascript to display how many hours this employee is scheduled so far -->
                     <!-- Will display red if scheduled for more hours than available -->
@@ -46,7 +47,7 @@
                     <h2> Hours Available </h2>
                     <!-- Use Javascript to display how many hours this employee is available -->
                     <h2> N/A </h2>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -89,37 +90,37 @@
                     <!-- Day of week labels -->
                     <div id="shift-calendar">
                         <div class="row labels">
-                            <div class="col p-0" id="sunday">
+                            <div class="col-12 col-md p-0" id="sunday">
                                 <div class="grid-label" id="sunday-title"></div>
                                 <div class="grid-item" id="sunday-morning"></div>
                                 <div class="grid-item" id="sunday-afternoon"></div>
                             </div>
-                            <div class="col p-0" id="monday">
+                            <div class="col-12 col-md p-0" id="monday">
                                 <div class="grid-label" id="monday-title"></div>
                                 <div class="grid-item" id="monday-morning"></div>
                                 <div class="grid-item" id="monday-afternoon"></div>
                             </div>
-                            <div class="col p-0" id="tuesday">
+                            <div class="col-12 col-md p-0" id="tuesday">
                                 <div class="grid-label" id="tuesday-title"></div>
                                 <div class="grid-item" id="tuesday-morning"></div>
                                 <div class="grid-item" id="tuesday-afternoon"></div>
                             </div>
-                            <div class="col p-0" id="wednesday">
+                            <div class="col-12 col-md p-0" id="wednesday">
                                 <div class="grid-label" id="wednesday-title"></div>
                                 <div class="grid-item" id="wednesday-morning"></div>
                                 <div class="grid-item" id="wednesday-afternoon"></div>
                             </div>
-                            <div class="col p-0" id="thursday">
+                            <div class="col-12 col-md p-0" id="thursday">
                                 <div class="grid-label" id="thursday-title"></div>
                                 <div class="grid-item" id="thursday-morning"></div>
                                 <div class="grid-item" id="thursday-afternoon"></div>
                             </div>
-                            <div class="col p-0" id="friday">
+                            <div class="col-12 col-md p-0" id="friday">
                                 <div class="grid-label" id="friday-title"></div>
                                 <div class="grid-item" id="friday-morning"></div>
                                 <div class="grid-item" id="friday-afternoon"></div>
                             </div>
-                            <div class="col p-0" id="saturday">
+                            <div class="col-12 col-md p-0" id="saturday">
                                 <div class="grid-label" id="saturday-title"></div>
                                 <div class="grid-item" id="saturday-morning"></div>
                                 <div class="grid-item" id="saturday-afternoon"></div>
@@ -130,6 +131,37 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<!-- choose employee modal -->
+<div class="modal fade animate__animated animate__fadeInDown" id="choose-employee-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title text-white">No Employee Chosen!</h5>
+      </div>
+      <div class="modal-body">
+        You must choose an employee to be able to add a shift!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- schedule success modal -->
+<div class="modal fade" id="publish-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-info">
+        <h5 class="modal-title text-white">Publishing Schedule</h5>
+      </div>
+      <div class="modal-body">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

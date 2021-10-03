@@ -60,7 +60,7 @@ function employeeListHandler(arr, department) {
             fullName = employeeArr[i][j].first_name + ' ' + employeeArr[i][j].last_name;
 
             const button = document.createElement('button');
-            button.classList.add('btn', 'btn-secondary', 'mt-2');
+            button.classList.add('btn', 'btn-secondary', 'my-1');
             button.setAttribute('type', 'button');
             button.innerText = fullName;
 
@@ -100,7 +100,7 @@ function employeeShiftHandler(event) {
 
     // ensures that an employee has been picked before allowing changes to be made to the schedule
     if (!employee_id) {
-        alert('Please pick an employee!');
+        $('#choose-employee-modal').modal('show');
         return;
     }
 
@@ -390,13 +390,13 @@ function shiftDisplayHandler(event) {
                     if (shiftArr[i].start_time === morningStartTime) {
                         createShiftButton(morningStartTime, morningEndTime, '#thursday-morning');
                     } else {
-                        createShiftButton(afternoonStartTime, afternoonEndTime, '#thursday-afternon');
+                        createShiftButton(afternoonStartTime, afternoonEndTime, '#thursday-afternoon');
                     }
                 } else if (shiftArr[i].shift_date === friday.format('YYYY-MM-DD')) {
                     if (shiftArr[i].start_time === morningStartTime) {
                         createShiftButton(morningStartTime, morningEndTime, '#friday-morning');
                     } else {
-                        createShiftButton(afternoonStartTime, afternoonEndTime, '#friday-afternon')
+                        createShiftButton(afternoonStartTime, afternoonEndTime, '#friday-afternoon')
                     }
                 } else if (shiftArr[i].shift_date === saturday.format('YYYY-MM-DD')) {
                     if (shiftArr[i].start_time === morningStartTime) {
@@ -518,5 +518,29 @@ publishEl.addEventListener('click', (event) => {
                     }
                 })
             }
+
+            $('#publish-modal').modal('show');
+
+            let x = 1;
+
+            setInterval(() => {
+                $('#publish-modal .progress-bar').attr('aria-valuenow', x);
+                $('#publish-modal .progress-bar').attr('style', `width: ${x}%`);
+                $('#publish-modal .progress-bar').text(`${x}%`);
+
+                x++;
+
+                if (x > 100) {
+                    x = 100;
+                }
+
+                // console.log(x);
+            }, 80);
+
+            document.querySelector('html').setAttribute('style', 'pointer-events: none;');
+
+            setTimeout(() => {
+                document.location.reload();
+            }, 10000);
         })
 });

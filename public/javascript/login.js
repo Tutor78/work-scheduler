@@ -1,6 +1,10 @@
 async function loginFormHandler(event) {
     event.preventDefault();
 
+    document.querySelector('#wrong-information-alert').classList.add('collapse');
+    document.querySelector('#complete-form-alert').classList.add('collapse');
+
+
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
 
@@ -22,12 +26,12 @@ async function loginFormHandler(event) {
             }
         })
         .catch(err => {
-            $('#no-user-modal').modal('show');
+            document.querySelector('#wrong-information-alert').classList.remove('collapse');
             // console.log(err);
         })
 
     } else {
-        $('#complete-form-modal').modal('show');
+        document.querySelector('#complete-form-alert').classList.remove('collapse');
     }
 
 

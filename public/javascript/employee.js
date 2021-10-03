@@ -15,13 +15,13 @@ const afternoonShiftStart = moment().hour(16).minute(0).second(0).format('HH:mm:
 const afternoonShiftEnd = moment().hour(22).minute(0).second(0).format('HH:mm:ss');
 
 document.querySelector('#week-of').innerText = sunday.format("MM/DD/YYYY");
-document.querySelector('#sunday').innerText = sunday.format("dddd, MM/DD");
-document.querySelector('#monday').innerText = monday.format("dddd, MM/DD");
-document.querySelector('#tuesday').innerText = tuesday.format("dddd, MM/DD");
-document.querySelector('#wednesday').innerText = wednesday.format("dddd, MM/DD");
-document.querySelector('#thursday').innerText = thursday.format("dddd, MM/DD");
-document.querySelector('#friday').innerText = friday.format("dddd, MM/DD");
-document.querySelector('#saturday').innerText = saturday.format("dddd, MM/DD");
+document.querySelector('#sunday-title').innerText = sunday.format("dddd, MM/DD");
+document.querySelector('#monday-title').innerText = monday.format("dddd, MM/DD");
+document.querySelector('#tuesday-title').innerText = tuesday.format("dddd, MM/DD");
+document.querySelector('#wednesday-title').innerText = wednesday.format("dddd, MM/DD");
+document.querySelector('#thursday-title').innerText = thursday.format("dddd, MM/DD");
+document.querySelector('#friday-title').innerText = friday.format("dddd, MM/DD");
+document.querySelector('#saturday-title').innerText = saturday.format("dddd, MM/DD");
 
 async function logout() {
     const response = await fetch('/api/employees/logout', {

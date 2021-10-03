@@ -2,14 +2,7 @@ body {
     background-image: url('/assets/images/andre-gorham-ii-Zn66S3MRgxM-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.email-label {
-    margin-right: 30px;
-}
-
-.password-label {
-    margin-right: 3px;
+    height: 100vh;
 }
 
 #minimal-btn {
@@ -25,4 +18,14 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.90);
     padding: 100px;
     margin-top: 100px;
+}
+
+@media screen and (max-width: 770px) {
+    #email {
+        width: 100%;
+    }
+
+    #password {
+        width: 100%;
+    }
 }
