@@ -36,6 +36,17 @@ async function logout() {
     }
 };
 
+// handles the creation of shift buttons
+function createShiftButton(startTime, endTime, location) {
+    // creates the p element to hold the times
+    let p = document.createElement('p');
+    p.classList.add('badge', 'badge-dark', 'p-3');
+    p.innerText = startTime + ' - ' + endTime;
+
+    // appends the button to the column that it belongs to based on the location
+    document.querySelector(location).appendChild(p);
+};
+
 fetch('/api/availability/shifts', {})
     .then(response => response.json())
     .then(shiftInfo => {
@@ -45,168 +56,63 @@ fetch('/api/availability/shifts', {})
 
         for (let i = 0; i < shiftArr.length; i++) {
             if (shiftArr[i].shift_date === sunday.format("YYYY-MM-DD")) {
-                console.log('Sunday');
+                // console.log('Sunday');
 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#sunday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#sundy-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftStart) {
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#sunday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#sunday-morning').appendChild(p1);
-                    document.querySelector('#sunday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#sunday-afternoon');
                 }
             } else if (shiftArr[i].shift_date === monday.format("YYYY-MM-DD")) {
-                console.log('Monday');
+                // console.log('Monday');
                 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#monday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#monday-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftStart) {
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#monday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#monday-morning').appendChild(p1);
-                    document.querySelector('#monday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#monday-afternoon');
                 }
             } else if (shiftArr[i].shift_date === tuesday.format('YYYY-MM-DD')) {
-                console.log('Tuesday')
+                // console.log('Tuesday');
 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#tuesday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#tuesday-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftEnd) {
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#tuesday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#tuesday-morning').appendChild(p1);
-                    document.querySelector('#tuesday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#tuesday-afternoon');
                 }
             } else if (shiftArr[i].shift_date === wednesday.format('YYYY-MM-DD')) {
                 console.log('Wednesday');
 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#wednesday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#wednesday-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftStart) { 
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#wednesday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#wednesday-morning').appendChild(p1);
-                    document.querySelector('#wednesday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#wednesday-afternoon');
                 }
             } else if (shiftArr[i].shift_date === thursday.format('YYYY-MM-DD')) {
                 console.log('Thursday')
 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#thursday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#thursday-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftStart) {
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#thursday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#thursday-morning').appendChild(p1);
-                    document.querySelector('#thursday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#thursday-afternoon');
                 }
             } else if (shiftArr[i].shift_date === friday.format('YYYY-MM-DD')) {
                 console.log('Friday');
 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#friday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#friday-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftStart) {
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#friday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#friday-morning').appendChild(p1);
-                    document.querySelector('#friday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#friday-afternoon');
                 }
             } else if (shiftArr[i].shift_date === saturday.format('YYYY-MM-DD')) {
                 console.log('Saturday');
 
-                if (shiftArr[i].start_time == morningShiftStart && shiftArr[i].end_time == morningShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    document.querySelector('#saturday-morning').appendChild(p);
-                } else if (shiftArr[i].start_time == afternoonShiftStart && shiftArr[i].end_time == afternoonShiftEnd) {
-                    const p = document.createElement('p');
-                    p.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#saturday-afternoon').appendChild(p);
+                if (shiftArr[i].start_time === morningShiftStart) {
+                    createShiftButton(morningShiftStart, morningShiftEnd, '#saturday-morning');
                 } else {
-                    const p1 = document.createElement('p');
-                    p1.innerText = morningShiftStart + ' - ' + morningShiftEnd;
-
-                    const p2 = document.createElement('p');
-                    p2.innerText = afternoonShiftStart + ' - ' + afternoonShiftEnd;
-
-                    document.querySelector('#saturday-morning').appendChild(p1);
-                    document.querySelector('#saturday-afternoon').appendChild(p2);
+                    createShiftButton(afternoonShiftStart, afternoonShiftEnd, '#saturday-afternoon');
                 }
             }
         }
-     })
+    })
 
 document.querySelector('.logout-btn').addEventListener('click', logout);
