@@ -1,0 +1,88 @@
+* {
+    font-family: helvetica;
+}
+
+body {
+    background-color: white;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+#minimal-btn {
+    float: right;
+    border: none;
+    color: white;
+}
+
+div.title {
+    text-align: center;
+    color: white;
+    background-color: rgb(179, 77, 77);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+
+.menu {
+    margin: auto;
+    text-align: center;
+}
+
+.lowered {
+    margin-top: 37px;
+}
+
+.week-of {
+    font-size: 20px;
+}
+
+.container-wrapper {
+    margin-top: 15px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.container-wrapper-grid {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.grid-container {
+    display: grid;
+    border: 1px solid black;
+}
+
+.grid-label {
+    height: 10px;
+    color: #34312a;
+    background-color: rgba(179, 77, 77, 0.5);
+    border: 1px solid black;
+    padding: 25px;
+    text-align: center;
+}
+
+.grid-item {
+    height: 250px;
+    background-color: rgba(179, 77, 77, 0.2);
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 760px){
+    #department-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    #employee-list {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,99 @@
+<div class="container-wrapper">
+    <div class="title">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Log out and return to log in screen-->
+                <button type="button" class="btn logout-btn" id="minimal-btn">Log Out</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="title">My Schedule</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Menu -->
+<div class="container-wrapper">
+    <div class="container-fluid" id="menu">
+        <div class="row">
+            <div class="col menu" id="current-day">
+                <h2> Todays Date </h2>
+                <!-- Use Moment.js here to get current day -->
+                <h2 id="week-of"></h2>
+            </div>
+            {{!-- TODO: implement these features on manager side --}}
+            {{!-- <div class="col menu">
+                <h2> Shifts (Coming Soon)</h2>
+                <!-- Update grid to only display logged in user's schedule -->
+                <button type="button" class="btn"> My Shifts</button>
+                <!-- Update grid to show all employee schedules -->
+                <button type="button" class="btn"> Show All </button>
+            </div>
+            <div class="col menu">
+                <!-- Update grid to display only selected department's schedules -->
+                <h2> Departments (Coming Soon)</h2>
+                <button type="button" class="btn"> One </button>
+                <button type="button" class="btn"> Two </button>
+                <button type="button" class="btn"> Three </button>
+            </div>
+            <div class="col menu">
+                <h2> Week (Coming Soon)</h2>
+                <!-- Update grid to display current week's schedule -->
+                <button type="button" class="btn"> Current Week </button>
+                <!-- Update grid to show next week's schedule -->
+                <button type="button" class="btn"> Next Week </button>
+            </div> --}}
+        </div>
+    </div>
+</div>
+
+<!-- Grid that displays current week's schedule -->
+<div class="container-wrapper">
+    <div class="container-fluid grid-container">
+        <div id="shift-calendar">
+            <div class="row labels">
+                <div class="col-12 col-md p-0" id="sunday">
+                    <div class="grid-label" id="sunday-title"></div>
+                    <div class="grid-item" id="sunday-morning"></div>
+                    <div class="grid-item" id="sunday-afternoon"></div>
+                </div>
+                <div class="col-12 col-md p-0" id="monday">
+                    <div class="grid-label" id="monday-title"></div>
+                    <div class="grid-item" id="monday-morning"></div>
+                    <div class="grid-item" id="monday-afternoon"></div>
+                </div>
+                <div class="col-12 col-md p-0" id="tuesday">
+                    <div class="grid-label" id="tuesday-title"></div>
+                    <div class="grid-item" id="tuesday-morning"></div>
+                    <div class="grid-item" id="tuesday-afternoon"></div>
+                </div>
+                <div class="col-12 col-md p-0" id="wednesday">
+                    <div class="grid-label" id="wednesday-title"></div>
+                    <div class="grid-item" id="wednesday-morning"></div>
+                    <div class="grid-item" id="wednesday-afternoon"></div>
+                </div>
+                <div class="col-12 col-md p-0" id="thursday">
+                    <div class="grid-label" id="thursday-title"></div>
+                    <div class="grid-item" id="thursday-morning"></div>
+                    <div class="grid-item" id="thursday-afternoon"></div>
+                </div>
+                <div class="col-12 col-md p-0" id="friday">
+                    <div class="grid-label" id="friday-title"></div>
+                    <div class="grid-item" id="friday-morning"></div>
+                    <div class="grid-item" id="friday-afternoon"></div>
+                </div>
+                <div class="col-12 col-md p-0" id="saturday">
+                    <div class="grid-label" id="saturday-title"></div>
+                    <div class="grid-item" id="saturday-morning"></div>
+                    <div class="grid-item" id="saturday-afternoon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script type="module" src="/javascript/employee.js"></script>
